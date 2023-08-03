@@ -20,7 +20,8 @@ public class AirportWeatherController : ControllerBase
     [HttpGet(Name = "GetAirportWeather")]
     public String Get(string airportID)
     {
-        Console.WriteLine(service.GetAirportForecast(airportID));
-        return "hello world";
+        String s = service.GetAirportForecast(airportID);
+        Console.WriteLine(s);
+        return s;
     }
 }

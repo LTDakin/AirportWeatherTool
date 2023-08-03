@@ -18,9 +18,9 @@ public class FinalReport
 // Used for the forecasted two future periods
 public class Period
 {
-    public double TimeOffset { get; set; }
+    public string TimeOffset { get; set; }
     public double WindSpeedMPH { get; set; }
-    public string WindDirection { get; set; }
+    public long WindDirection { get; set; }
 
 
 }
