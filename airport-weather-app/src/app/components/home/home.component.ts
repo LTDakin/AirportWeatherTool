@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { Convert, FinalReport } from 'src/app/models/Report';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent{
   // data fields
-  airportName: string = '';
+  airportID: string = '';
   myData : any;
   airports: string[] = [];
 
   constructor(private dataService: DataService) {}
-
-  ngOnInit(): void{
-    this.dataService.getData().subscribe((data) => {
-      this.myData = data;
-      console.log(this.myData);
-    })
-  }
   
   // add airport to the list of airports and clear the input box for the next name
   public addAirport(){
-    console.log("hello world");
+    this.dataService.getData(this.airportID).subscribe((data) => {
+      this.myData = data as Report;
+    })
   }
 }
