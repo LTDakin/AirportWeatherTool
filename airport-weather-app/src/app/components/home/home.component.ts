@@ -10,7 +10,7 @@ import { Convert, FinalReport } from 'src/app/models/Report';
 export class HomeComponent{
   // data fields
   airportID: string = '';
-  myData : any;
+  myData : FinalReport | undefined;
   airports: string[] = [];
 
   constructor(private dataService: DataService) {}
@@ -18,7 +18,7 @@ export class HomeComponent{
   // add airport to the list of airports and clear the input box for the next name
   public addAirport(){
     this.dataService.getData(this.airportID).subscribe((data) => {
-      this.myData = data as Report;
+      this.myData = data as FinalReport;
     })
   }
 }
