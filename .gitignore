@@ -1,0 +1,39 @@
+# ------------------------------------------------------------ Section for the API
+
+# Ignore compiled binaries and generated artifacts
+/AirportWeatherAPI/bin/
+/AirportWeatherAPI/obj/
+*.dll
+*.exe
+*.pdb
+
+# Ignore NuGet packages
+/AirportWeatherAPI/packages/
+
+# Ignore user-specific project settings
+*.user
+
+# Ignore Visual Studio related files and folders
+*.vs
+
+# ------------------------------------------------------------ Section for Angular
+# Ignore npm packages
+/airport-weather-app/node_modules/
+
+# Ignore production build output
+/airport-weather-app/dist/
+
+# Ignore end-to-end testing node modules
+/airport-weather-app/e2e/node_modules/
+
+# Ignore coverage reports
+/airport-weather-app/coverage/
+
+# Ignore log files
+*.log
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db

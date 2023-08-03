@@ -1,0 +1,9 @@
+<h1>Search for an Airport</h1>
+<input type="text" id="airport-name" name="airport-name" [(ngModel)]="airportName">
+<button (click)="addAirport()">Add</button>
+<h2>Currently Selected Airports</h2>
+<p 
+*ngFor="let val of airports"
+>{{val}}</p>
+
+<router-outlet></router-outlet>
