@@ -12,6 +12,8 @@ public class FinalReport
     public double RelativeHumidity { get; set; }
     public string CloudCoverageSummary { get; set; }
     public double VisibilityMiles { get; set; }
+    public string BestRunway {get; set;}
+    public double CurrentWindDirection {get; set;}
     public List<Period> Forecast { get; set; }
 }
 

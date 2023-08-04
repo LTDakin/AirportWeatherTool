@@ -25,8 +25,6 @@ public class WeatherForecastService
     public FinalReport buildConsice(Report wReport, AirportReport aReport)
     {
         FinalReport newReport = new FinalReport();
-        // Fill out the fields, thought about making a constructor but I thought this would look cleaner
-        // think there is also some other way of spreading out the reports and generating a new object from a set of them
         newReport.Identifier = wReport.Conditions.Ident;
         newReport.Name = aReport.Name;
         newReport.AvailableRunways = aReport.Runways.Length;
@@ -36,9 +34,36 @@ public class WeatherForecastService
         newReport.RelativeHumidity = wReport.Conditions.RelativeHumidity;
         newReport.CloudCoverageSummary = mostCommonCoverage(wReport.Conditions.CloudLayers);
         newReport.VisibilityMiles = wReport.Conditions.Visibility.DistanceSm;
+        newReport.BestRunway = pickBestRunway(aReport.Runways, wReport.Forecast.Conditions[0].Wind.Direction);
+        newReport.CurrentWindDirection = wReport.Forecast.Conditions[0].Wind.Direction;
         newReport.Forecast = buildForecastList(wReport.Forecast.Conditions);
 
         return newReport;
+    }
+
+    // find the runway name where it is the closest to the wind direction
+    private string pickBestRunway(Runway[] runways, long windDirection){
+        Console.WriteLine(windDirection);
+        long smallest = 360;
+        string closestRunway = "";
+        // loop through runways
+        foreach(Runway r in runways){
+            string runwayName = r.Name;
+            // convert name to degrees
+            string chopped = runwayName.Substring(0, runwayName.Length-1);
+            long runwayDirection = long.Parse(chopped)*10;
+            // Calculate the absolute difference between the target and the current number on the circle
+            long difference = Math.Abs((windDirection - runwayDirection + 180 + 360) % 360 - 180);
+            // check if difference smaller than smallest
+            if (difference < smallest)
+            {
+                // if it is then replace bestRunway
+                smallest = difference;
+                closestRunway = runwayName;
+            }
+        }
+        Console.WriteLine(closestRunway);
+        return closestRunway;
     }
 
     // Helper function that builds a list of Periods for the FinalReport
