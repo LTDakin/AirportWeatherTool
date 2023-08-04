@@ -1,0 +1,52 @@
+.home-div{
+    margin: 0;
+    background-color: rgb(216, 228, 253);
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-div{
+    width: 100%;
+    background-color: rgb(12, 10, 62);
+    color: rgb(240, 240, 240);
+    display: flex;
+    align-items: center;
+}
+
+.search-img{
+    height: 20px;
+}
+
+.input-button-div{
+    
+}
+
+.hero{
+    padding: 10px;
+}
+
+.input-airport-id{
+    height: 2em;
+    border-radius: 1em;
+}
+
+button{
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 10em;
+    height: 3em;
+    width: 10em;
+}
+
+.airport-information{
+
+}
+
+.airport-name{
+
+}
+
+.airport-details{
+
+}

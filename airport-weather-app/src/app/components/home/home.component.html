@@ -1,5 +1,21 @@
-<h1>Airport Weather Tool</h1>
-<input type="text" name="airport-name" [(ngModel)]="airportID">
-<button (click)="addAirport()">Search</button>
-
-{{myData | json}}
+<div class="home-div">
+    <div class="search-div">
+        <h1 class="hero">Airport Weather Tool</h1>
+        <div class="input-button-div">
+            <input class="input-airport-id" type="text" name="airport-name" [(ngModel)]="airportID">
+            <button clas="search-button" (click)="addAirport()"><img class="search-img" src="../../../assets/magnifying-glass-3-512.png"/></button>
+        </div>
+    </div>
+    <div class="airport-information" *ngIf="myData">
+        <h1 class="airport-name">{{myData.Name}}</h1>
+        <div class="airport-details">
+            <p>Identifier: {{myData.Identifier}}</p>
+            <p>Available Runways: {{myData.AvailableRunways}}</p>
+            <p>Lat: {{myData.Lat}}</p>
+            <p>Long: {{myData.Long}}</p>
+            <p>Temperature: {{myData.Temperature}} F</p>
+            <p>Relative Humidity: {{myData.RelativeHumidity}}</p>
+            <p>Visibility: {{myData.VisibilityMiles}} mi</p>
+        </div>
+    </div>
+</div>

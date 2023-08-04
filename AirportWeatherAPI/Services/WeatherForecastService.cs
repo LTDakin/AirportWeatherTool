@@ -15,8 +15,8 @@ public class WeatherForecastService
     {
         // TODO handle null reports aka the airport name was entered incorrectly
         // Call the APIs and get the objects back
-        Task<WeatherReport> wReport = fetchWeatherObj(conditionAPIUrl + airportID);
-        Task<AirportReport> aReport = fetchAirportObj(airportDataAPIUrl + airportID);
+        Task<WeatherReport?> wReport = fetchWeatherObj(conditionAPIUrl + airportID);
+        Task<AirportReport?> aReport = fetchAirportObj(airportDataAPIUrl + airportID);
         // Build the Report with information for the frontend and Serialize it into a json string
         return JsonSerializer.Serialize<FinalReport>(buildConsice(wReport.Result.Report, aReport.Result));
     }
