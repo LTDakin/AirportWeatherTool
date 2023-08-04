@@ -21,7 +21,6 @@ public class AirportWeatherController : ControllerBase
     public String Get(string airportID)
     {
         String s = service.GetAirportForecast(airportID);
-        Console.WriteLine(s);
         return s;
     }
 }
