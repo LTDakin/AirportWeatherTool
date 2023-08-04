@@ -55,6 +55,17 @@
   background-color: rgb(34, 101, 202);
 }
 
+.content {
+  display: flex;
+}
+
+.no-airport-information {
+  color: rgb(122, 122, 122);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
 .airport-information {
   display: flex;
   flex-direction: column;
@@ -84,6 +95,7 @@
 }
 
 .forecast-period {
+  width: 200px;
   font-size: 11px;
   padding: 10px;
   margin: 10px;
