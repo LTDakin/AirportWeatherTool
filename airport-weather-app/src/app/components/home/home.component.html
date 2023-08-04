@@ -10,6 +10,7 @@
     />
     <button class="search-button" (click)="addAirport()">🔍</button>
   </div>
+  <h1 *ngIf="!myData">Search an Airport to see data about it</h1>
   <div class="airport-information" *ngIf="myData">
     <h1 class="airport-name">{{ myData.Name }}</h1>
     <div class="airport-details">
@@ -21,6 +22,12 @@
       <p>Relative Humidity: {{ myData.RelativeHumidity }}</p>
       <p>Visibility: {{ myData.VisibilityMiles }} mi</p>
     </div>
-    <div class="airport-periods"></div>
+    <div class="airport-periods">
+      <div class="forecast-period" *ngFor="let forecast of myData.Forecast">
+        <p>⏰ {{ forecast.TimeOffset.slice(11, -5) }}</p>
+        <p>Wind Speed: {{ forecast.WindSpeedMPH }}</p>
+        <p>Wind Direction: {{ forecast.WindDirection }}</p>
+      </div>
+    </div>
   </div>
 </div>

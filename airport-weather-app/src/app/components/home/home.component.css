@@ -76,3 +76,18 @@
 .airport-details {
   margin-left: 15px;
 }
+
+.airport-periods {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.forecast-period {
+  font-size: 11px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(34, 101, 202);
+  color: rgb(255, 255, 255);
+}
