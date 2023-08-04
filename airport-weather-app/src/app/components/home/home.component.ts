@@ -12,6 +12,7 @@ export class HomeComponent {
   airportID: string = '';
   myData: FinalReport | undefined;
   airports: string[] = [];
+  bestRunway: number = 0;
 
   constructor(private dataService: DataService) {}
 
@@ -19,7 +20,7 @@ export class HomeComponent {
   public addAirport() {
     this.dataService.getData(this.airportID).subscribe((data) => {
       this.myData = data as FinalReport;
-      console.log(this.myData.Forecast);
+      this.bestRunway = parseInt(this.myData.BestRunway.slice(0, -1)) * 10;
     });
   }
 }

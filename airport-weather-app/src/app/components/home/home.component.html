@@ -37,6 +37,21 @@
           <p>Wind Direction: {{ forecast.WindDirection }} °</p>
         </div>
       </div>
+      <div class="best-runway-section">
+        <h3>🌟 Best Runway</h3>
+        <p class="wd-text">Wind Direction: {{ myData.CurrentWindDirection }}</p>
+        <p class="br-text">Best Runway: {{ myData.BestRunway }}</p>
+        <div class="circle-container">
+          <div
+            class="windDirection-mark"
+            style="--angle: {{ myData.CurrentWindDirection }}deg;"
+          ></div>
+          <div
+            class="bestRunway-mark"
+            style="--angleR: {{ bestRunway }}deg;"
+          ></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

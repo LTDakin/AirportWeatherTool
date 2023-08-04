@@ -103,3 +103,64 @@
   background-color: rgb(34, 101, 202);
   color: rgb(255, 255, 255);
 }
+
+.circle {
+  height: 100px;
+  width: 100px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.best-runway-section {
+  margin-left: 15px;
+  padding: 10px;
+}
+
+.wd-text {
+  color: black;
+}
+
+.br-text {
+  color: rgb(34, 101, 202);
+}
+
+.circle-container {
+  display: block;
+  background: #fff;
+  width: 11.5em;
+  height: 11.5em;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: thin;
+  border-color: #bfbfbf;
+  margin: 0em;
+}
+
+.windDirection-mark {
+  --angle: 0deg;
+  position: relative;
+  top: 18%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 2px solid transparent; /* Adjust line thickness as needed */
+  border-right: 2px solid transparent; /* Adjust line thickness as needed */
+  border-bottom: 60px solid #383f57; /* Adjust line length and color as needed */
+  transform-origin: 50% 100%;
+  transform: rotate(var(--angle));
+}
+
+.bestRunway-mark {
+  --angleR: 0deg;
+  position: relative;
+  top: -15%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 2px solid transparent; /* Adjust line thickness as needed */
+  border-right: 2px solid transparent; /* Adjust line thickness as needed */
+  border-bottom: 60px solid rgb(34, 101, 202); /* Adjust line length and color as needed */
+  transform-origin: 50% 100%;
+  transform: rotate(var(--angleR));
+}
